@@ -1,5 +1,7 @@
-# mumax3 outputs (regenerable, can get huge)
-*.out/
+# mumax3 outputs: ignore contents, keep images and table data
+*.out/*
+!*.out/*.png
+!*.out/table.txt
 *.ovf
 
 # python / editor
