@@ -1,0 +1,8 @@
+# mumax3 outputs (regenerable, can get huge)
+*.out/
+*.ovf
+
+# python / editor
+__pycache__/
+.ipynb_checkpoints/
+.vscode/

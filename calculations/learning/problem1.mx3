@@ -1,0 +1,19 @@
+//Sample: a 256 nm x 256 nm x 4nm square (once cell think in z).
+//Cells: 4nm x 4nm in-plane.
+//Materials: Permalloy, using Msat = 800e3, Aex = 13e-12, alpha = 0.02
+//Start: magnetization uniform along +x. 
+//Run: Relax it, then save one snapshot of m.
+
+//geometry
+setgridsize(64, 64, 1)
+setcellsize(4e-9, 4e-9, 4e-9)
+
+//material (permalloy)
+Msat = 800e3 
+Aex = 13e-12
+alpha = 0.02
+
+//Solution commands
+m = uniform(1, 0, 0)
+relax()
+save(m) 
