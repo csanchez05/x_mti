@@ -4,8 +4,6 @@
 //Start: m uniform along +x
 //Field: 100mT along +z
 //Run: 10ns with tableautosave(5e-12) so that the table gets a row every 5 ps.
-//No relaxation, because relaxing would slide m to the field direction instantly.
-//We want to see the dynamics happening.
 
 //geometry
 setgridsize(1, 1, 1)
