@@ -12,10 +12,12 @@ setcellsize(5e-9, 5e-9, 5e-9)
 //material
 Msat = 800e3
 // Aex = 13e-12 (irrelevant because there are no neighbors for exchange to couple to)
-alpha = 0.02
+alpha = 0.04
 
 //fields
 m = uniform(1,0,0)
 B_ext = vector(0,0,100e-3)
+
+//run
 tableautosave(5e-12) //snapshot every 5 ps
 run(10e-9) //runs 10ns

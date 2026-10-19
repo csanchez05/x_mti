@@ -33,9 +33,6 @@ print("saved my.png")
 #plot mz
 plt.figure()
 plt.plot(t, mz)
-alpha, gamma, B = 0.02, 1.76e11, 0.1
-tau = (1 + alpha**2) / (alpha * gamma * B) * 1e9   # in ns
-plt.plot(t, np.tanh(t / tau), "--", label="theory")
 plt.title('Evolution of magnetic moment (Z)', fontsize = 25)
 plt.xlabel("time (ns)", fontsize=25)
 plt.ylabel("mz", fontsize = 25)

@@ -1,0 +1,28 @@
+// Domain wall in a perpendicular-anistropy strip
+// Sample: A strip 512nm long (x) x 128 nm wide (y) x 1nm thick
+// Cells: 2 nm x 2 nm x 1 nm cells
+// Materials: a Co/Pt-like film, Msat = 600e3, Aex = 10e-12, alpha = 0.3, 
+// Perpendicular Anisotropy: Ku1 = 0.8e6 along z (also set anisU)
+// Start: an up domain on left and down domain on right, wall in middle.
+// Run: relax(), then save(m)
+
+//geometry
+setgridsize(512, 128, 1)
+setcellsize(1e-9, 1e-9, 1e-9)
+
+//material
+Msat = 600e3
+Aex = 10e-12
+alpha = 0.3
+Ku1 = 0.8e6
+anisU = vector(0,0,1)
+
+//domains & relaxation
+m = twoDomain(0,0,1, 0,1,0, 0,0,-1)
+relax()
+
+//run
+B_ext = vector(0,0,2e-3) // 10 mT along +z
+tableautosave(10e-12) //table row every 10 ps
+run(2e-9) //runs 2ns
+save(m)
